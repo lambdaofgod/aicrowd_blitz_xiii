@@ -1,0 +1,25 @@
+datasets:
+  train:
+    metadata_path: train_metadata.json
+    dataset_format: deepsense 
+  valid:
+    metadata_path: val_metadata.json
+    dataset_format: deepsense 
+classnames:
+  - N95
+  - surgical
+  - cloth
+  - KN95
+input_height: 256
+input_width: 256
+experiment_dirpath: experiments/faster_rcnn_training_1000
+num_train_iters: 2000
+valid_freq_iters: 500 
+verbose_freq_iters: 100 
+lr_step_size: 250 
+timestamped: True
+lr_gamma: 0.5
+lr_step_size: 200
+valid_batch_size: 8
+train_transformations: ["resize(512,512)", "simple_augmentations(512, 512)"]
+valid_transformations: ["resize(512,512)"]
